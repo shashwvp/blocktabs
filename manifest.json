@@ -6,13 +6,17 @@
   ],
   "permissions": [
     "activeTab",
-    "tabs"
+    "tabs",
+    "scripting"
   ],
   "description": "Base Level Extension",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
     "default_popup": "hello.html"
+  },
+  "background": {
+    "service_worker": "background.js"
   }
  
 }

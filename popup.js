@@ -1,4 +1,3 @@
-// check manifest file for permissions
 async function getCurrentTab() {
     let queryOptions = { active: true, lastFocusedWindow: true };
     // `tab` will either be a `tabs.Tab` instance or `undefined`.
@@ -6,4 +5,7 @@ async function getCurrentTab() {
     return tab;
   }
 
-getCurrentTab().then(tab => alert(tab.title)).catch(err => alert(err));
+getCurrentTab()
+    .then(tab => tab.id)
+    .then((tabId) => chrome.tabs.remove(tabId))
+    .catch(err => alert(err));
